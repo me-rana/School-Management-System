@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class FrontendController extends Controller
 {
     //Role Management System---------------------------------------------------------->
-    protected function mypanel(){
+    public function mypanel(){
         if(Auth::user()->usertype == 4){
             return redirect()->route('dashboard');
         }
@@ -24,7 +24,7 @@ class FrontendController extends Controller
     }
 
     //Fontend Support files
-    protected function support(){
+    public function support(){
         $info_data = ['address' => 'ঢাকা-১২১৬, বাংলাদেশ','phone' => '+8801521380065', 'email' => 'contact@ranasvc.com'];
         $courses_data = ['course_list' => 'কোর্সসমূহ', 'course1' => 'স্নাতক', 'course2' => 'ডিপ্লোমা', 'course3' => 'মাস্টার্স' ];
         $datas = compact('info_data', 'courses_data');
