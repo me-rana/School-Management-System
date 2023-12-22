@@ -32,4 +32,24 @@ class FrontendController extends Controller
         return view('frontend.contact')->with($support);
     }
 
+    public function teachers(){
+        $support = $this->support();
+        return view('frontend.teachers')->with($support);
+    }
+
+    public function testiominal(){
+        $support = $this->support();
+        return view('frontend.testiominal')->with($support);
+    }
+
+    public function notices(){
+        $support = $this->support();
+        return view('frontend.notices')->with($support);
+    }
+
+    public function costs(){
+        $support = $this->support();
+        return view('frontend.costs')->with($support);
+    }
+
 }
