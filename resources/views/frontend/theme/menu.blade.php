@@ -1,5 +1,5 @@
 <div class="navbar-nav mx-auto py-0">
-    <a href="{{ route('প্রধান পেইজ') }}" class="nav-item nav-link active">প্রধান পেইজ</a>
+    <a href="{{ route('হোম') }}" class="nav-item nav-link active">হোম</a>
     <a href="{{ route('আমাদের সম্পর্কে') }}" class="nav-item nav-link">আমাদের সম্পর্কে</a>
     <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">সকল কোর্সসমূহ</a>

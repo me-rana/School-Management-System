@@ -66,7 +66,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
-            <a href="{{ route('প্রধান পেইজ') }}" class="navbar-brand ml-lg-3">
+            <a href="{{ route('হোম') }}" class="navbar-brand ml-lg-3">
                 <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>Edukate</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -80,7 +80,7 @@
     <!-- Navbar End -->
     
 
-    @if (Route::currentRouteName() == 'প্রধান পেইজ')
+    @if (Route::currentRouteName() == 'হোম')
 
         <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
@@ -113,8 +113,8 @@
     <div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom" style="margin-bottom: 90px;">
         <div class="container text-center py-5">
             <h1 class="text-white display-1">{{ Route::currentRouteName() }}</h1>
-            <div class="d-inline-flex text-white mb-5">
-                <p class="m-0 text-uppercase"><a class="text-white" href="{{ route('প্রধান পেইজ') }}">প্রধান পেইজ</a></p>
+            <div class="d-inline-flex text-white mb-5"> 
+                <p class="m-0 text-uppercase"><a class="text-white" href="{{ route('হোম') }}">হোম</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
                 <p class="m-0 text-uppercase">{{ Route::currentRouteName() }}</p>
             </div>

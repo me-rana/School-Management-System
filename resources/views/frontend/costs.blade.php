@@ -1,7 +1,7 @@
 @extends('frontend.theme.main')
 @section('main')
 <div class="container">
-    <h3 class="text-center">স্নাতক</h3>
+    <h3 class="text-center">স্নাতক</h3> <br><br>
     <h4 class="text-center text-success">বি.এসসি ইন ইলেকট্রনিক্স অ্যান্ড কমিউনিকেশন ইঞ্জিনিয়ারিং (ইসিই)</h4>
 
     <table class="table table-hover">
@@ -58,8 +58,8 @@
         </tbody>
       </table>
 
+      <br><br>
 
-      <h3 class="text-center my-5">স্নাতক</h3>
     <h4 class="text-center text-success">বি.এসসি ইন কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (সিএসসি)</h4>
 
     <table class="table table-hover">
