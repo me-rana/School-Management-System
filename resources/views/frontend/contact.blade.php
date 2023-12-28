@@ -12,7 +12,7 @@
                         </div>
                         <div class="mt-n1">
                             <h4>আমাদের লোকেশন</h4>
-                            <p class="m-0">{{ $info_data['address'] }}</p>
+                            <p class="m-0">{{ $info_data->address }}</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-5">
@@ -21,7 +21,7 @@
                         </div>
                         <div class="mt-n1">
                             <h4>ফোন নম্বর</h4>
-                            <p class="m-0">{{ $info_data['phone'] }}</p> 
+                            <p class="m-0">{{ $info_data->phone }}</p> 
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -30,7 +30,7 @@
                         </div>
                         <div class="mt-n1"> 
                             <h4>ইমেইল</h4>
-                            <p class="m-0">{{ $info_data['email'] }}</p>
+                            <p class="m-0">{{ $info_data->email }}</p>
                         </div>
                     </div>
                 </div>
@@ -41,20 +41,25 @@
                     <h1 class="display-4">আমাদের মেসেজ পাঠান </h1>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form action="/contact" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-6 form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="আপনার নাম" required="required">
+                                <input name="name" type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="আপনার নাম"">
+                                <small><span class="text-danger"> @error('name') {{$message}} @enderror </span></small>
                             </div>
-                            <div class="col-6 form-group">
-                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="আপনার ইমেইল" required="required">
+                                <div class="col-6 form-group">
+                                <input name="email" type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="আপনার ইমেইল" required="required">
+                                <small><span class="text-danger"> @error('email') {{$message}} @enderror </span></small>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="সাব্জেক্ট" required="required">
+                            <input name="subject" type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="সাব্জেক্ট">
+                            <small><span class="text-danger"> @error('subject') {{$message}} @enderror </span></small>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="মেসেজ" required="required"></textarea>
+                            <textarea name="message" class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="মেসেজ"></textarea>
+                            <small><span class="text-danger"> @error('message') {{$message}} @enderror </span></small>
                         </div>
                         <div>
                             <button class="btn btn-primary py-3 px-5" type="submit">মেসেজ পাঠান </button>

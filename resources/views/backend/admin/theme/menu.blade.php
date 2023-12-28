@@ -6,11 +6,11 @@
         <span class="hide-menu">Home</span>
       </li>
       <li class="sidebar-item">
-        <a class="sidebar-link" href="./index.html" aria-expanded="false">
+        <a class="sidebar-link" href="{{ route('My Panel') }}" aria-expanded="false">
           <span>
             <i class="ti ti-layout-dashboard"></i>
           </span>
-          <span class="hide-menu">Dashboard</span>
+          <span class="hide-menu">ড্যাশবোর্ড</span>
         </a>
       </li>
       <li class="nav-small-cap">
@@ -18,11 +18,11 @@
         <span class="hide-menu">UI COMPONENTS</span>
       </li>
       <li class="sidebar-item">
-        <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+        <a class="sidebar-link" href="{{ route('কোর্সসমূহ(এডমিন)') }}" aria-expanded="false">
           <span>
             <i class="ti ti-article"></i>
           </span>
-          <span class="hide-menu">Buttons</span>
+          <span class="hide-menu">কোর্সসমূহ</span>
         </a>
       </li>
       <li class="sidebar-item">

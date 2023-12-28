@@ -22,10 +22,12 @@ use App\Http\Controllers\FrontendController;
 Route::get('/', [FrontendController::class, 'home'])->name('হোম');
 Route::get('/about', [FrontendController::class, 'about'])->name('আমাদের সম্পর্কে');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('যোগাযোগ');
+Route::post('/contact', [FrontendController::class, 'contact_submission']);
 Route::get('/teachers', [FrontendController::class, 'teachers'])->name('শিক্ষকমণ্ডলী');
 Route::get('/testiominal', [FrontendController::class, 'testiominal'])->name('টেস্টিওমিনাল');
 Route::get('/notices', [FrontendController::class, 'notices'])->name('নোটিশ');
 Route::get('/costs', [FrontendController::class, 'costs'])->name('খরচের তালিকা');
+Route::get('/query', [FrontendController::class, 'query'])->name('সার্চ ফলাফল'); 
 Route::get('/mypanel', [AuthController::class, 'mypanel'])->name('My Panel');
 
 //Admin's Panel --------------------------------------------------------------------------->
@@ -36,6 +38,10 @@ Route::middleware([
     'verified',
 ])->prefix('/admin')->group(function () {
     Route::get('/dashboard', [AdminController::class,'dashboard'])->name('ড্যাশবোর্ড(এডমিন)');
+    Route::get('/courses', [AdminController::class,'courses'])->name('কোর্সসমূহ(এডমিন)');
+    Route::post('/courses', [AdminController::class, 'courses_submission']);
+    Route::get('/courses/{course}', [AdminController::class,'courses_show'])->name('কোর্স আপডেট(এডমিন)');
+    Route::post('/courses/{course}', [AdminController::class, 'courses_submission']);
 });
 
 //Accountant's Panel --------------------------------------------------------------------------->

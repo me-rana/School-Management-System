@@ -88,19 +88,24 @@
             <h1 class="text-white mt-4 mb-4">এখান থেকে শুরু কর</h1>
             <h1 class="text-white display-1 mb-5">আমাদের কোর্সসমূহ</h1>
             <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">{{ $courses_data['course_list'] }}</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">{{ $courses_data['course1'] }}</a>
-                            <a class="dropdown-item" href="#">{{ $courses_data['course2'] }}</a>
-                            <a class="dropdown-item" href="#">{{ $courses_data['course3'] }}</a>
+                <form action="{{ route('সার্চ ফলাফল') }}" method="get">
+                    <div class="row">
+                        <div class="col-3">
+                            <select class="form-select form-select text-dark" name="ssubject" id="" style="padding: 20px;">
+                                @foreach ($subjects as $subject)
+                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                                @endforeach 
+                            </select>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="name" class="form-control border-light" style="padding: 32px;" placeholder="সাবজেক্টের নাম">
+                            
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-secondary" style="padding: 20px;">খুঁজুন</button>
                         </div>
                     </div>
-                    <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="সাবজেক্টের নাম">
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary px-4 px-lg-5">খুঁজুন</button>
+                </form>
                     </div>
                 </div>
             </div>
@@ -119,21 +124,24 @@
                 <p class="m-0 text-uppercase">{{ Route::currentRouteName() }}</p>
             </div>
             <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">{{ $courses_data['course_list'] }}</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">{{ $courses_data['course1'] }}</a>
-                            <a class="dropdown-item" href="#">{{ $courses_data['course2'] }}</a>
-                            <a class="dropdown-item" href="#">{{ $courses_data['course3'] }}</a>
+                <form action="{{ route('সার্চ ফলাফল') }}" method="get">
+                    <div class="row">
+                        <div class="col-3">
+                            <select class="form-select form-select text-dark" name="ssubject" id="" style="padding: 20px;">
+                                @foreach ($subjects as $subject)
+                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                                @endforeach 
+                            </select>
+                        </div>
+                        <div class="col-7">
+                            <input type="text" name="name" class="form-control border-light" style="padding: 32px;" placeholder="সাবজেক্টের নাম">
+                            
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-secondary" style="padding: 20px;">খুঁজুন</button>
                         </div>
                     </div>
-                    <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="সাবজেক্টের নাম">
-                    <div class="input-group-append">
-                        <button class="btn btn-secondary px-4 px-lg-5">খুঁজুন</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

@@ -4,9 +4,11 @@
     <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">সকল কোর্সসমূহ</a>
         <div class="dropdown-menu m-0">
-            <a href="#" class="dropdown-item">{{ $courses_data['course1'] }}</a>
-            <a href="#" class="dropdown-item">{{ $courses_data['course2'] }}</a>
-            <a href="#" class="dropdown-item">{{ $courses_data['course3'] }}</a>
+            @foreach ($subjects as $subject)
+            <a href="#" class="dropdown-item">{{ $subject->name}}</a>
+            @endforeach
+            
+
         </div>
     </div>
     <div class="nav-item dropdown">
