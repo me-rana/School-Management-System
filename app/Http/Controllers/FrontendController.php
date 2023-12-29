@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Notice;
 use App\Models\Contact;
 use App\Models\Subject;
 use App\Models\Settings;
@@ -72,7 +73,9 @@ class FrontendController extends Controller
 
     public function notices(){
         $support = $this->support();
-        return view('frontend.notices')->with($support);
+        $perpage = 12;
+        $notices = Notice::latest()->paginate($perpage);
+        return view('frontend.notices', compact('notices'))->with($support)->with('i',(request()->input('page',1)-1)*$perpage);;
     }
 
     public function costs(){

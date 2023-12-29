@@ -26,11 +26,11 @@
         </a>
       </li>
       <li class="sidebar-item">
-        <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+        <a class="sidebar-link" href="{{ route('নোটিশ(এডমিন)') }}" aria-expanded="false">
           <span>
             <i class="ti ti-alert-circle"></i>
           </span>
-          <span class="hide-menu">Alerts</span>
+          <span class="hide-menu">নোটিশ</span>
         </a>
       </li>
       <li class="sidebar-item">

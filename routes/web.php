@@ -40,8 +40,10 @@ Route::middleware([
     Route::get('/dashboard', [AdminController::class,'dashboard'])->name('ড্যাশবোর্ড(এডমিন)');
     Route::get('/courses', [AdminController::class,'courses'])->name('কোর্সসমূহ(এডমিন)');
     Route::post('/courses', [AdminController::class, 'courses_submission']);
-    Route::get('/courses/{course}', [AdminController::class,'courses_show'])->name('কোর্স আপডেট(এডমিন)');
+    Route::get('/courses/{course}', [AdminController::class,'courses_update'])->name('কোর্স আপডেট(এডমিন)');
     Route::post('/courses/{course}', [AdminController::class, 'courses_submission']);
+    Route::get('/notices', [AdminController::class, 'notices'])->name('নোটিশ(এডমিন)');
+    Route::post('/notices', [AdminController::class, 'notices_submission']);
 });
 
 //Accountant's Panel --------------------------------------------------------------------------->

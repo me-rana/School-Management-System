@@ -28,7 +28,7 @@
               <td>টিউশন ফি</td>
               <td>{{ $course->month }} মাস</td>
               <td>{{ $course->tution }} টাকা</td>
-              <td class="text-right">{{ $course->count * $course->tution }} টাকা</td>
+              <td class="text-right">{{ $course->month * $course->tution }} টাকা</td>
             </tr>
             <tr>
               <th scope="row">৩</th>

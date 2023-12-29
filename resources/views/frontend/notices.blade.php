@@ -5,22 +5,19 @@
         <thead>
           <tr>
 
-            <th scope="col">Date</th>
-            <th scope="col">Title</th>
-            <th scope="col">Publishing Date</th>
+            <th scope="col">ডেট</th>
+            <th scope="col">টাইটেল</th>
+            <th scope="col">পড়ুন</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="bg-warning text-center text-white">Dec<h4 class="text-white">২২</h4></td>
-            <td>আমাদের এখানে রয়েছে সকল ধরনের প্রফেশনাল কোর্স এবং মাস্টার্স ও ডিপ্লমা কোর্স।</td>
-            <td><button class="btn btn-warning">দেখুন</button></td>
-          </tr>
-          <tr>
-            <td class="bg-warning text-center text-white">Dec<h4 class="text-white">২১</h4></td>
-            <td>আমাদের এখানে রয়েছে সকল ধরনের প্রফেশনাল কোর্স এবং মাস্টার্স ও ডিপ্লমা কোর্স।</td>
-            <td><button class="btn btn-warning">দেখুন</button></td>
-          </tr>
+          @foreach ($notices as $notice) 
+                      <tr class="">
+                        <td scope="col-2" class="bg-warning text-white text-center"><h3 class="text-center text-white">{{ date_format($notice->created_at, "d") }}</h3><span class="text-center">{{ date_format($notice->created_at, "F") }}</span></td>
+                        <td scope="col-8">{{ $notice->title }}</td>
+                        <td scope="col-2"><a href="../../../../{{ $notice->pdf_path }}" target="_blank"><button class="btn btn-warning text-white">পড়ুন</button></a></td>
+                      </tr>
+                      @endforeach
          
         </tbody>
       </table>

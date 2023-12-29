@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Notice;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -23,7 +24,7 @@ class AdminController extends Controller
 
     protected function courses_update (Course $course){
         $subjects = Subject::all();
-        return view('backend.admin.couses', ['course' => $course, 'subjects' => $subjects]);
+        return view('backend.admin.course', ['course' => $course, 'subjects' => $subjects]);
     }
 
     protected function courses_submission(Request $request, $course = null) : RedirectResponse {
@@ -48,12 +49,41 @@ class AdminController extends Controller
         }
         if ($course != null) {
             $coursex->update();
-            return redirect()->back()->with('success', 'Course updated successfully');  
+            return redirect()->back()->with('success', 'কোর্সটি আপডেট করা হয়েছে');  
         } 
         else{
             $coursex->save();
-            return redirect()->back()->with('success', 'Course added successfully');
+            return redirect()->back()->with('success', 'কোর্সটি যুক্ত করা হয়েছে');
         }
         
+    }
+    protected function notices(){
+        $perpage = 12;
+        $notices = Notice::latest()->paginate($perpage);
+        return view('backend.admin.notices',compact('notices'))->with('i',(request()->input('page',1)-1)*$perpage);
+    }
+    protected function notices_submission(Request $request, $notice = null){
+        if ($notice == null){
+            $noticex = new Notice(); 
+        }
+        else{
+            $noticex = Notice::where('id', $notice)->first();
+        }
+        $noticex->title = $request->title; 
+        if (!is_null($request->file('image'))){
+            $pdf_name = $request->file('image')->getClientOriginalName();
+            $pdf = date("Y-m-d_H-i-s")."_Notice_".rand(11111,99999)."_".$pdf_name;
+            $request->file('image')->storeAs('public/pdf', $pdf);
+            $noticex->pdf_path = 'storage/pdf/'.$pdf;
+         }
+         if ($notice == null){
+            $noticex->save();
+            return redirect()->back()->with('success', 'নোটিশটি যুক্ত করা হয়েছে'); 
+        }
+        else{
+            $noticex->update();
+            return redirect()->back()->with('success', 'কোর্সটি আপডেট করা হয়েছে'); 
+        }
+
     }
 }

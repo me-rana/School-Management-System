@@ -6,10 +6,10 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-body">
-          @if (session('message'))
+          @if (session('success'))
           <div class="alert alert-primary alert-dismissible fade show" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <strong>Success!</strong> {{session('message')}}
+            <strong>Success!</strong> {{session('success')}}
           </div>
           @endif
           <h5 class="card-title fw-semibold mb-4">কোর্সসমূহ</h5>
@@ -47,6 +47,7 @@
                               <td>{{ $course->formflap." টাকা (".$course->count." বার)" }}</td>
                               <td>{{ $course->labfee." টাকা (".$course->count." বার)" }}</td>
                               <td>{{ $course->admission + ($course->tution * $course->month) + ($course->semester * $course->count) + ($course->formflap * $course->count) + ($course->labfee * $course->count)}} টাকা</td>
+                              <td><a href="../../admin/courses/{{ $course->id }}">U</a></td>
                             </tr>
                         @endforeach
                     @endif
