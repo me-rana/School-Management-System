@@ -3,13 +3,13 @@
 <h3> ৪ টি কন্ট্রোল প্যানেল সহ স্কুল ম্যানেজমেন্ট সিস্টেম </h3>
 <li> এডমিন প্যানেল </li> <br>
 ইউজার ইমেইল ঃ admin@test.me <br>
-পাসওয়ার্ড ঃ adminx4312 <br>
+পাসওয়ার্ড ঃ adminx4312 <br><br><br>
 <li> অ্যাকাউন্টস প্যানেল </li> <br>
 ইউজার ইমেইল ঃ accountant@test.me <br>
-পাসওয়ার্ড ঃ accountantx4312 <br>
+পাসওয়ার্ড ঃ accountantx4312 <br><br><br>
 <li> শিক্ষক প্যানেল </li> <br>
 ইউজার ইমেইল ঃ teacher@test.me <br>
-পাসওয়ার্ড ঃ teacherx4312 <br>
+পাসওয়ার্ড ঃ teacherx4312 <br><br><br>
 <li> শিক্ষার্থী প্যানেল </li> <br>
 ইউজার ইমেইল ঃ student@test.me <br>
 পাসওয়ার্ড ঃ studentx4312 <br>
